@@ -1,0 +1,91 @@
+{% extends "layout.html" %} 
+{% block content %}
+
+    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 40px">
+      <div class="scroll">
+        <form method="POST">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category,message in messages %}
+                <div class="alert alert-{{ category }} ">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% for i in range(2,length) %}
+            {% if not user[i] %}
+                
+            {% else %}
+              <div class="d-flex flex-row justify-content-end mb-4 pt-1">
+                
+                <div>
+                  <p class="small p-2 me-3 mb-3 text-white rounded-3 bg-warning">{{user[i]}}</p>
+                </div>
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                  alt="avatar 1" style="width: 45px; height: 100%;">
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="small mb-1 text-muted">{{time[i]}}</p>
+                <p class="small mb-1">{{username}}</p>
+              </div>
+            {% endif %}
+            {% if not bot[i][0] %}
+              <div class="d-flex flex-row justify-content-start">
+                <img src="https://user-images.githubusercontent.com/85386114/221402917-341ab107-1675-4233-94c2-110742ef660c.png"
+                  alt="avatar 1" style="width: 45px; height: 100%;">
+                <div>
+                  <ul class="list-group list-group-light list-group-small">
+                    {% for j in bot[i][1] %}
+                    <li class="list-group-item">{{ j }}</li>   
+                    {% endfor %}
+                    {% if bot[i][2] %}
+                      <a href="{{bot[i][2]}}"><li class="list-group-item"><h4 style="color: blue;">Reference Video</h4></li></a>
+                      {% if bot[i][3] %}
+                        <li class="list-group-item" style="text-align: center;">Download Reference Pdf</li>
+                        <li class="list-group-item"><a href="{{bot[i][3]}}"><img style="height: 50%; width: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc77BKyQK4uus6JRfSbNOd8L6rXQsypcosrQ&usqp=CAU"></a></li>
+                      {% endif %}
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>      
+              <div class="d-flex justify-content-between">
+                <p class="small mb-1">Bright Bot</p>
+                <p class="small mb-1 text-muted">{{time[i]}}</p>
+              </div> 
+            {% else %}
+              <div class="d-flex flex-row justify-content-start">
+                <img src="https://user-images.githubusercontent.com/85386114/221402917-341ab107-1675-4233-94c2-110742ef660c.png"
+                  alt="avatar 1" style="width: 45px; height: 100%;">
+                <div>
+                  <p class="small p-2 ms-3 mb-3 rounded-3" ">{{bot[i][0]}}</p>
+                </div>
+              </div>      
+              <div class="d-flex justify-content-between">
+                <p class="small mb-1">Bright Bot</p>
+                <p class="small mb-1 text-muted">{{time[i]}}</p>
+              </div>        
+            {% endif %}
+            
+      {% endfor %}
+      
+        </div>
+        <div class="card-footer  " style="width: 50pc; position: relative;right: 2pc; background-color:inherit;">
+          <div style="height: 4pc">
+            
+              <div >
+              <input name="usermsg" onblur="this.focus()" autofocus class="form-control" style="width: 42pc;" >
+              <div style="position: relative; left: 43pc; bottom: 2.3pc; ">
+                <button type="submit" name="action" value="send" class="btn btn-warning btn-block mb-4">.  Send   .</button></div>
+              </div>
+            
+            
+      </div>
+    </form>
+    </div>
+  </div>
+      
+    
+
+
+{% endblock %} 

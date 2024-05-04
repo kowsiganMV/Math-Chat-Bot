@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lag="en">
+  <head>
+    <title> Home </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <style>
+      .scroll {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 30pc;
+        width: 48pc;
+        position: relative;
+        right: 1pc;
+        overflow-y: scroll;
+        border-radius: 5px;
+        border: 3px solid rgb(235, 235, 235);
+      }
+    </style>
+  
+  </head>
+  <body style="background-color: #ffff; height: auto;">
+  <!------------------------------------------------------------------>
+    <h1 style=" font-family:fantasy;
+     color: rgb(103, 134, 226); 
+     border:3px solid rgb(216, 216, 218) ; text-align: center;
+      border-radius: 5px; position: relative; 
+      top: 5px; ">Bright Chat Bot </h1>
+    
+    <section style="background-color: #ffffff;">
+      <div class="container py-5">
+        
+        <div class="row" style="position: relative; bottom: 30px;">
+          
+          <div class="col-md-12">
+            
+            <div class="card" id="chat3" style="border-radius: 15px;">
+              
+              <div class="card-body">
+                
+                <div class="row">
+                  
+                  <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0" style="height: 10pc; width: 30pc; ">
+                    
+                    <div class="p-3">
+                      
+                      <div class="input-group rounded mb-3">
+                        
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                          aria-describedby="search-addon" />
+                          
+                          <span class="input-group-text border-0" id="search-addon">
+                          
+                            <i class="fas fa-search"></i>
+                          
+                          </span>
+                        
+                      </div>
+
+                      <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                        
+                        <ul class="list-unstyled mb-0">
+                          
+                          <li class="p-2 border-bottom">
+                            
+                            <div class="d-flex flex-row">
+                              
+                              <div>
+                                
+                                <img src="https://user-images.githubusercontent.com/85386114/221402917-341ab107-1675-4233-94c2-110742ef660c.png"
+                                    alt="avatar" class="d-flex align-self-center me-3" width="60">
+                                    
+                                    <span class="badge bg-success badge-dot"></span>
+                                  
+                              </div>
+
+                              <p style="position: relative; left: 15pc; 
+                                color: rgb(243, 0, 0); font-size: larger;font-family: serif;">Live</p>
+                              <div class="pt-1">
+                                
+                                <p class="fw-bold mb-0">Maths Bot</p>
+                                
+                                <p class="small text-muted">Let's Ask Something .....</p>
+                              
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+  <!------------------------------------------------------------------>
+
+                  <div style="height: 40pc; width: 50pc; border: 2px solid rgb(205, 205, 205); border-radius: 5px; ">
+                    
+                      <div class="card" style="position: relative; top: 10px;">
+                      <div class="card-header d-flex justify-content-between align-items-center p-3"  >
+                        <h5 class="mb-0">Chat messages</h5>
+                      <div class="d-flex flex-row align-items-center">
+                        <span class="badge bg-warning me-3">20</span>
+                        <i class="fas fa-minus me-3 text-muted fa-xs"></i>
+                        <i class="fas fa-comments me-3 text-muted fa-xs"></i>
+                        <i class="fas fa-times text-muted fa-xs"></i>
+                      </div>
+                    </div>
+                  </div>
+                    {% block content %}{% endblock %}
+                    
+              
+              
+            </div>
+          
+          </div>
+    
+          
+        </div>
+
+      </div>
+    </section>
+  </body>
+</html>
